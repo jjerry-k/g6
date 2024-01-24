@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  board:
+    build:
+      context: ./board
+    user: ${UID}:${GID}
+    restart: unless-stopped
+    container_name: apboardp
+    volumes:
+      - ./board:/board
+    ports:
+      - 8000:8000
